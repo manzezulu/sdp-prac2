@@ -4,6 +4,15 @@ import java.util.*;
 
 public class SimpleFunctions {
     public SimpleFunctions() {}
+        public static int task1(List<Integer> a, List<Integer> b) {
+            int sum = 0;
+            for (int i = 0; i < b.size(); i++) {
+                if (b.get(i) < a.size() && b.get(i) >= 0) {
+                    sum += a.get(b.get(i));
+                }
+            }
+            return sum;
+        }
         // Method to check if a list is sorted
         public static <T extends Comparable<T>> boolean task5(List<T> list) {
         if (list == null || list.size() <= 1) { //If list is empty or has one element than sorted
