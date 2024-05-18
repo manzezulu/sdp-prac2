@@ -16,4 +16,21 @@ public class SimpleFunctions {
         }
         return true; //If list is in order
     }
+    // method to remove first characters in a list
+    public static ArrayList<String> task2(ArrayList<String> listElements){
+
+        ArrayList<String>output = new ArrayList<>();
+        
+        for(String j:listElements){
+
+            if(j.length()>1){
+            // if lengh = 0 then nothing to remove
+            //if length is 1 then result is [""] i dont want that
+                output.add(j.substring(1));// add to output
+            }
+        }
+        return output;
+    }
+
+
 }
