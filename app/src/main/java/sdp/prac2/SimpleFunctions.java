@@ -5,7 +5,7 @@ import java.util.*;
 public class SimpleFunctions {
     public SimpleFunctions() {}
         // Method to check if a list is sorted
-        public static <T extends Comparable<T>> boolean isSorted(List<T> list) {
+        public static <T extends Comparable<T>> boolean task5(List<T> list) {
             if (list == null || list.size() <= 1) { //If list is empty or has one element than sorted
                 return true; 
             }
