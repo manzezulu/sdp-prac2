@@ -6,5 +6,75 @@ package sdp.prac2;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 class AppTest {
+    @Test // Task 1 tests
+    public void testTask1() {
+        List<Integer> a = Arrays.asList(1, 2, 3);
+        List<Integer> b = Arrays.asList(0, 1, -1, 3);
+        int expectedSum = 3;
+        int actualSum = new SimpleFunctions().task1(a, b);
+        assertEquals(expectedSum, actualSum);
+
+        b = Arrays.asList(-1);
+        expectedSum = 0;
+        actualSum = new SimpleFunctions().task1(a, b);
+        assertEquals(expectedSum, actualSum);
+
+        b = Arrays.asList(3);
+        expectedSum = 0;
+        actualSum = new SimpleFunctions().task1(a, b);
+        assertEquals(expectedSum, actualSum);
+
+        b = Arrays.asList();
+        expectedSum = 0;
+        actualSum = new SimpleFunctions().task1(a, b);
+        assertEquals(expectedSum, actualSum);
+
+        a = Arrays.asList();
+        b = Arrays.asList(0);
+        expectedSum = 0;
+        actualSum = new SimpleFunctions().task1(a, b);
+        assertEquals(expectedSum, actualSum);
+    }
+
+    @Test
+    void task2Test1() {
+        // Arrange
+        SimpleFunctions classBeingTested = new SimpleFunctions();
+        ArrayList<String> list = new ArrayList<>();
+        list.add("hello");
+        list.add("");
+        list.add("me");
+
+        ArrayList<String> expected = new ArrayList<>();
+        expected.add("ello");
+        expected.add("e");
+
+        // act
+        ArrayList<String> result = classBeingTested.task2(list);
+        // assert
+        assertIterableEquals(expected, result);
+    }
+
+    @Test
+    void task2Test2() {
+        // Arrange
+        SimpleFunctions classBeingTested = new SimpleFunctions();
+        ArrayList<String> list = new ArrayList<>();
+        list.add("hello");
+        list.add("m");
+        list.add("");
+
+        ArrayList<String> expected = new ArrayList<>();
+        expected.add("ello");
+        // act
+        ArrayList<String> result = classBeingTested.task2(list);
+        // assert
+        assertIterableEquals(expected, result);
+    }
+
 }
