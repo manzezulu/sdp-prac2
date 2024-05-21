@@ -77,4 +77,50 @@ class AppTest {
         assertIterableEquals(expected, result);
     }
 
+    @Test
+    public void task4Test1() {
+        // Arrange
+        SimpleFunctions classBeingTested = new SimpleFunctions();
+        List<Integer> a = List.of(1, 2, 3);
+        List<Integer> b = List.of(4, 5, 6);
+        List<Integer> expectedResult = List.of(6, 10, 12);  // Assuming the task4 logic
+
+        // Act
+        List<Integer> actualResult = classBeingTested.task4(a, b);
+
+        // Assert
+        assertIterableEquals(expectedResult, actualResult); // Comparing lists
+    }
+
+    // test for empy lists
+    @Test
+    public void task4Test2() {
+        // Arrange
+        SimpleFunctions classBeingTested = new SimpleFunctions();
+        List<Integer> a = new ArrayList<>(); // Empty list
+        List<Integer> b = new ArrayList<>();
+        List<Integer> expectedResult = new ArrayList<>();
+
+        // Act
+        List<Integer> actualResult = classBeingTested.task4(a, b);
+
+        // Assert
+        assertIterableEquals(expectedResult, actualResult); 
+    }
+    //test diff sizes
+    @Test
+    public void task4Test3() {
+        // Arrange
+        SimpleFunctions classBeingTested = new SimpleFunctions();
+        List<Integer> a = List.of(1, 2);
+        List<Integer> b = List.of(3, 4, 5); // Different sizes
+        List<Integer> expectedResult = null; // Or your desired handling
+
+        // Act
+        List<Integer> actualResult = classBeingTested.task4(a, b);
+
+        // Assert
+        assertNull(actualResult);  // Checking for null return on different sizes
+    }
+
 }
