@@ -1,6 +1,7 @@
 package sdp.prac2;
 
 import java.util.*;
+import java.util.ArrayList;
 
 public class SimpleFunctions {
     public SimpleFunctions() {}
@@ -41,5 +42,22 @@ public class SimpleFunctions {
         return output;
     }
 
+    public static List<Integer> task4(List<Integer> firstLst, List<Integer> scndLst){
 
-}
+        if (firstLst.size() != scndLst.size()) {
+            return null; // Return null if lists have diff sizes
+        }
+
+        List<Integer> result = new ArrayList<>();
+        for (int i = 0; i < firstLst.size(); i++) 
+        {
+            int productResult = firstLst.get(i) * scndLst.get(scndLst.size() - 1 - i); // Multiply elements
+            result.add(productResult);
+        }
+        
+        return result;
+    }
+
+
+    }
+
