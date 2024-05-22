@@ -123,4 +123,31 @@ class AppTest {
         assertNull(actualResult);  // Checking for null return on different sizes
     }
 
+    @Test
+    public void testTask6_NeedRounding() {
+        List<Integer> numbers = Arrays.asList(101, 250, 999);
+        List<Integer> expected = Arrays.asList(200, 300, 1000);
+        assertEquals(expected, SimpleFunctions.task6(numbers));
+    }
+
+    @Test
+    public void testTask6_Mixed() {
+        List<Integer> numbers = Arrays.asList(50, 150, 200, 345);
+        List<Integer> expected = Arrays.asList(100, 200, 200, 400);
+        assertEquals(expected, SimpleFunctions.task6(numbers));
+    }
+
+    @Test
+    public void testTask5WithSortedIntegers() {
+        List<Integer> sortedList = Arrays.asList(1, 2, 3, 4, 5);
+        assertTrue(SimpleFunctions.task5(sortedList));
+    }
+
+    @Test
+    public void testTask5WithEmptyList() {
+        List<Integer> emptyList = Arrays.asList();
+        assertTrue(SimpleFunctions.task5(emptyList));
+    }
+
+
 }
